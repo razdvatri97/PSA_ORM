@@ -3,25 +3,25 @@ package com.pucrs.psaorm.model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
 @Builder
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor()
-public class Estudante {
-
+public class Disciplina {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
+    int codigoDisciplina;
     String nome;
-    int documento;
-    String endereco;
+    String horario;
+    int turma;
 
-    int matricula;
+    @OneToMany
+    List<Estudante> estudanteMatriculados;
 
-    @ManyToOne
-    Disciplina disciplinaMatriculado;
 
 }

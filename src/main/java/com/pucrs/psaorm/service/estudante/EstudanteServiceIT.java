@@ -1,4 +1,4 @@
-package com.pucrs.psaorm.service;
+package com.pucrs.psaorm.service.estudante;
 
 import com.pucrs.psaorm.model.Estudante;
 
@@ -11,7 +11,7 @@ public interface EstudanteServiceIT {
 
     List<Estudante> findAll();
 
-    Optional<Estudante> findByMatricula(int matricula);
+    Optional<Estudante> findEstudanteByMatricula(int matricula);
 
     String deleteByMatricula(int matricula);
 
