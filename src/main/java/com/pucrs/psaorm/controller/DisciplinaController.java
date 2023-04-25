@@ -31,12 +31,17 @@ public class DisciplinaController {
         return ResponseEntity.status(OK).body(disciplinaService.findDisciplinaByCodigoDisciplina(codigoDisciplina));
     }
 
-   /* @PostMapping(value = "/disciplinas/criar")
-    public ResponseEntity<List<Disciplina>> criar(@RequestParam int codigoDisciplina
-    @RequestParam String){
+    @PostMapping(value = "/disciplinas/criar")
+    public ResponseEntity<Optional<Disciplina>> criar(
+            @RequestParam int codigoDisciplina,
+            @RequestParam String nome,
+            @RequestParam String horario,
+            @RequestParam int turma){
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(disciplinaService.save(Disciplina.builder()
-                        .codigoDisciplina(codigoDisciplina).build()))
-    } */
-
+                        .codigoDisciplina(codigoDisciplina)
+                        .nome(nome)
+                        .horario(horario)
+                        .turma(turma).build()));
+    }
 }
